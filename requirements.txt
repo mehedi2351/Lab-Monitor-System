@@ -1,0 +1,4 @@
+# Install with:  pip install -r requirements.txt
+PyQt6>=6.4.0
+mysql-connector-python>=8.0.0
+psutil>=5.9.0
