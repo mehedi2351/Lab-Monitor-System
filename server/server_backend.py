@@ -5,7 +5,12 @@ The GUI runs on the main thread. Socket accept/read work runs in daemon
 threads, and all UI updates are sent through the callback registered by
 server_app.py.
 """
-
+# পাইথন সকেট প্রোগ্রামিং (TCP/IP Sockets)
+#২. মাল্টি-থ্রেডিং (Python Threading)
+ #আপনার ল্যাবে যদি ২০টি পিসি থাকে, তবে সার্ভারকে একসাথে ২০টি পিসির তথ্য রিসিভ করতে হয়।
+ #মাই-এসকিউএল ডাটাবেস (MySQL)
+#৫. থ্রেড-সেফ সিগন্যালিং (PyQt6 Signals)
+#ব্যাকএন্ড থেকে ফ্রন্টএন্ডে (ড্যাশবোর্ড) মেসেজ পাঠানোর জন্য এটি একটি বিশেষ টেকনিক।
 import json
 import os
 import socket

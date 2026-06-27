@@ -13,7 +13,7 @@ FIXES IN THIS VERSION
   - All GUI updates come through pyqtSignal (thread-safe)
   - "connecting" event greys out the button + shows spinner text
 """
-
+#পিসির RAM এবং CPU কতটুকু ব্যবহার হচ্ছে তা বের করার জন্য পাইথনের psutil লাইব্রেরি ব্যবহার করা হয়েছে। psutil.cpu_percent() দিয়ে CPU এবং psutil.virtual_memory().percent দিয়ে RAM এর পার্সেন্টেজ বের করা হচ্ছে।
 import sys, os, platform
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

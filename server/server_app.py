@@ -77,6 +77,8 @@ class ServerWindow(QMainWindow):
             self._create_menu_btn("Power Control"),
             self._create_menu_btn("Messages"),
             self._create_menu_btn("Logs"),
+            self._create_menu_btn("Pendrive Blocker"),
+            self._create_menu_btn("Browser Blocker"),
         ]
         for idx, btn in enumerate(self.menu_buttons):
             btn.clicked.connect(lambda checked=False, i=idx: self._show_page(i))
@@ -88,7 +90,7 @@ class ServerWindow(QMainWindow):
         logout.clicked.connect(self.close)
         sidebar_layout.addWidget(logout)
 
-        self.pages = QStackedWidget()
+        self.pages = QStackedWidget() # eita main page er jnno use hobe ja sudhu rigt side er jnis pati chneg kre 
         self.page_dash = self._build_dashboard()
         self.page_power = self._build_power_control()
         self.page_messages = self._build_messages_page()
@@ -112,7 +114,8 @@ class ServerWindow(QMainWindow):
         for i, btn in enumerate(self.menu_buttons):
             btn.setChecked(i == index)
         self._refresh_all()
-
+    
+    #eikhne amraa acta deshborad toiri krtesi 
     def _build_dashboard(self):
         page = QWidget()
         layout = QVBoxLayout(page)
@@ -139,7 +142,7 @@ class ServerWindow(QMainWindow):
         self.dash_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         layout.addWidget(self.dash_table)
         return page
-
+# power buton er jnno page toiri krtesi
     def _build_power_control(self):
         page = QWidget()
         layout = QVBoxLayout(page)
@@ -188,7 +191,7 @@ class ServerWindow(QMainWindow):
         self.messages_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         layout.addWidget(self.messages_table)
         return page
-
+# log button
     def _build_logs_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
